@@ -13,7 +13,9 @@ public class ItemTest {
         GildedRose gildedRose = new GildedRose(items);
         gildedRose.updateQuality();
         int quality = item.quality;
+        int sellIn = item.sellIn;
         Assertions.assertEquals(8, quality);
+        Assertions.assertEquals(-1, sellIn);
     }
 
     @Test
@@ -23,27 +25,33 @@ public class ItemTest {
         GildedRose gildedRose = new GildedRose(items);
         gildedRose.updateQuality();
         int quality = item.quality;
+        int sellIn = item.sellIn;
         Assertions.assertEquals(12, quality);
+        Assertions.assertEquals(-1, sellIn);
     }
 
     @Test
     public void testBackstage() {
-        Item item = new Item("Backstage passes to a TAFKAL80ETC concert", 0, 10);
+        Item item = new Item("Backstage passes to a TAFKAL80ETC concert", 10, 10);
         Item[] items = new Item[] {item};
         GildedRose gildedRose = new GildedRose(items);
         gildedRose.updateQuality();
         int quality = item.quality;
-        Assertions.assertEquals(0, quality);
+        int sellIn = item.sellIn;
+        Assertions.assertEquals(12, quality, "quality : ");
+        Assertions.assertEquals(9, sellIn, "sellIn : ");
     }
 
     @Test
     public void testSulfuras() {
-        Item item = new Item("Sulfuras, Hand of Ragnaros", 0, 10);
+        Item item = new Item("Sulfuras, Hand of Ragnaros", 8, 10);
         Item[] items = new Item[] {item};
         GildedRose gildedRose = new GildedRose(items);
         gildedRose.updateQuality();
         int quality = item.quality;
-        Assertions.assertEquals(10, quality);
+        int sellIn = item.sellIn;
+        Assertions.assertEquals(10, quality, "quality : ");
+        Assertions.assertEquals(8, sellIn, "sellIn : ");
     }
 
 }
