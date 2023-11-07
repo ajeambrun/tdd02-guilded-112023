@@ -1,0 +1,6 @@
+- Trop de if trop d'imbrications
+- Duplication, répétition
+- Magic strings, numbers
+- nom de la méthode "Quality" > alors on gère quality sell-in
+- if négatifs
+-
