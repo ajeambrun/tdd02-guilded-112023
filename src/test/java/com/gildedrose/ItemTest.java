@@ -25,4 +25,25 @@ public class ItemTest {
         int quality = item.quality;
         Assertions.assertEquals(12, quality);
     }
+
+    @Test
+    public void testBackstage() {
+        Item item = new Item("Backstage passes to a TAFKAL80ETC concert", 0, 10);
+        Item[] items = new Item[] {item};
+        GildedRose gildedRose = new GildedRose(items);
+        gildedRose.updateQuality();
+        int quality = item.quality;
+        Assertions.assertEquals(0, quality);
+    }
+
+    @Test
+    public void testSulfuras() {
+        Item item = new Item("Sulfuras, Hand of Ragnaros", 0, 10);
+        Item[] items = new Item[] {item};
+        GildedRose gildedRose = new GildedRose(items);
+        gildedRose.updateQuality();
+        int quality = item.quality;
+        Assertions.assertEquals(10, quality);
+    }
+
 }
