@@ -15,4 +15,14 @@ public class ItemTest {
         int quality = item.quality;
         Assertions.assertEquals(8, quality);
     }
+
+    @Test
+    public void testAgeBrie() {
+        Item item = new Item("Aged Brie", 0, 10);
+        Item[] items = new Item[] {item};
+        GildedRose gildedRose = new GildedRose(items);
+        gildedRose.updateQuality();
+        int quality = item.quality;
+        Assertions.assertEquals(12, quality);
+    }
 }
